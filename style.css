@@ -1,0 +1,23 @@
+body {
+    font-family: arial;
+}
+
+.center {
+    border: solid 1px #1b1b1b;
+    height: 500px;
+    width: 500px;
+}
+
+.msg-container {
+    height: 500px;
+    width: 500px;
+    overflow: auto;
+}
+
+#input-msg {
+    margin-block: 10px;
+}
+
+#msg {
+    margin: 5px;
+}

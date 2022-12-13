@@ -1,11 +1,37 @@
+:root {
+    --primary: #3c91ff;
+    --dark-text: #444c57;
+    --dark-background: #1b1b1b;
+    --dark-border: #3b3b3b;
+    --back-contrast: #f2f2f2;
+    --btn-hover: #cccccc;
+}
+
 body {
     font-family: arial;
+    background-color: var(--dark-background);
 }
 
 .center {
-    border: solid 1px #1b1b1b;
+    border: solid 1px var(--dark-border);
+    background-color: var(--dark-background);
     height: 500px;
     width: 500px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.msg-container > p {
+    margin: 5px;
+}
+
+.msg-container > a {
+    margin: 5px;
+    color: #2c76ff;
+}
+
+li > a {
+    color: #2c76ff;
 }
 
 .msg-container {
@@ -20,4 +46,41 @@ body {
 
 #msg {
     margin: 5px;
+    border-bottom: solid 1px var(--dark-border);
+    padding-block: 5px;
+}
+
+.submit {
+    background-color: var(--dark-background);
+    border: solid 1px var(--dark-border);
+    border-radius: 5px;
+    color: #fff;
+    width: 155px;
+    height: 35px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#input-msg {
+    background-color: var(--dark-background);
+    color: #fff;
+    border: solid 1px var(--dark-border);
+    border-radius: 5px;
+    padding: 5px;
+    height: 22px;
+    display: inline-block;
+}
+
+#input-msg:hover {
+    border: solid 1px #2c76ff;
+}
+
+#input-msg:focus {
+    border: solid 1px #2c76ff;
+    box-shadow: 0px 0px 12px 0px rgba(44,118,255,0.68);
+    outline: none;
 }

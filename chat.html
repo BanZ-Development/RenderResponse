@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <input type="text" name="" id="input">
+    <script src="chatbot.js"></script>
+    <script>
+        // the question it detects, then the answer/answers it responds with, and then how it should be formatted
+        let container = 'container'
+        let input = 'input';
+        let embedLink = ['question', ['how do you do? ', 'Visit', 'https://youtube.com'], 'embedLink']
+        let basicArray = ['word', 33, 'list'];
+        let test = ['word', ['Wanna win a beverage', 'Join', 'burger'], 'list']
+        newQuestion(test); // array with multiple answers
+        //newQuestion(basicArray); //array with singular integer answer
+        newQuestion('word', 33, 'list'); //no array
+        newQuestion(embedLink); //render embedded link
+        newQuestion('word', 'hello im a dude in a world', 'par');
+        newQuestion('word', ['youtube', 'https://youtube.com', 'google', 'https://google.com'], 'linkList')
+    </script>
+</body>
+</html>

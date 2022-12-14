@@ -54,7 +54,7 @@ li > a {
     background-color: var(--dark-background);
     border: solid 1px var(--dark-border);
     border-radius: 5px;
-    color: #fff;
+    color: #ccc;
     width: 155px;
     height: 35px;
     font-size: 18px;

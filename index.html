@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Bot</title>
+    <title>RenderResponse.JS</title>
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,7 +18,7 @@
         <button class="submit" onclick="check()">Send</button>
     </div>
     </div>
-    <script src="responserender.js"></script>
+    <script src="response.min.js"></script>
     <script>
         function check() {
             let message = document.getElementById('input-msg').value.toLowerCase();
@@ -34,12 +34,9 @@
                 newResponse('Not sure', 'be a little more specific', 'par', false);
             }
         }
-        //newResponse('who is the 16th President?', 'Lincolin', 'list', true);
-        //newResponse('What does a dolphin look like?', ['This is a dolphin', 'assets/images/dolphin.jpg', 'custom'], 'img', true);
-        //newResponse('Need some links?', ['youtube', 'https://youtube.com', 'google', 'https://google.com'], 'linkList', true);
-    </script>
+        </script>
 
-    <div class="info">
+    <div style="width: 500px;" class="info">
         <h2>Ask some questions</h2>
         <h4>This is just a small demo of what you can do</h4>
         <ul>

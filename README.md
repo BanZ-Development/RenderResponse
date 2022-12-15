@@ -21,7 +21,7 @@ You can create an variable with an array of the info you want to display or use 
 
 ### Display
 - true - displays the question
-- false
+- false - doesn't display the question
 
 ### Types
 - list - simple list for multiple responses

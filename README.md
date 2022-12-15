@@ -9,7 +9,7 @@ RenderResponse is a open source vanilla javascript library that gives you tools 
 ### Installation
 
 [Download](https://github.com/BanZ-Development/RenderResponse/releases/) |
-[CDN](https://banz-development.github.io/RenderResponse/responserender.js)
+[CDN](https://banz-development.github.io/RenderResponse/response.min.js)
 
 ## Documentation
 

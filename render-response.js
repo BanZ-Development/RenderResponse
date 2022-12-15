@@ -1,4 +1,4 @@
-function newQuestion(question, answer, response) {
+function newResponse(question, answer, response, displayQuestion) {
     let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList'];
     
     if(typeof question == 'object') {
@@ -6,12 +6,13 @@ function newQuestion(question, answer, response) {
         const quest = question[0];
         const answ = question[1];
         const respo = question[2];
+        const display = question[3];
         var notResp = 0;
         for (i=0; i < respTypes.length;i++) {
             if(question[2] == respTypes[i]) {
                 var type = i;
                 console.table({question: typeof quest, answer: typeof answ, response: respo});
-                renderResult(type, answ);
+                renderResult(type, answ, quest, display);
             } else {
                 notResp = notResp + 1
             }
@@ -28,7 +29,7 @@ function newQuestion(question, answer, response) {
                 if(response == respTypes[i]) {
                     console.log('success')
                     var type = i;
-                    renderResult(type, answer);
+                    renderResult(type, answer, question, displayQuestion);
                 } else {
                     notResp = notResp + 1
                 }
@@ -51,12 +52,18 @@ function newQuestion(question, answer, response) {
     }
 }
 
-function renderResult(type, answer) {
+function renderResult(type, answer, quest, display) {
     console.log('rendering');
     let list = document.createElement('ul');
     let link = document.createElement('a');
     let par = document.createElement('p');
     let container = document.getElementById('container');
+    if (display == true) {
+        const question = document.createElement('p');
+        const questContent = document.createTextNode(quest);
+        question.appendChild(questContent);
+        container.appendChild(question);
+    }
     switch(type) {
         case 0: //list
         if (typeof answer == 'object') {

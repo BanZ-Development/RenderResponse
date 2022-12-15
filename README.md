@@ -3,12 +3,12 @@
 RenderResponse is a open source vanilla javascript library that gives you tools to render things like a list, paragraph, embedded paragraph link, and link lists. 
 
 #### Created by Lucky
-[Lucky's GitHub](https://github.com/Raidlucky)
+[Lucky's GitHub](https://github.com/Raidlucky) |
 [Contact Lucky](https://raidlucky.github.io/Projects/)
 
 ### Installation
 
-[Download](https://github.com/BanZ-Development/RenderResponse/blob/main/main.js)
+[Download](https://github.com/BanZ-Development/RenderResponse/blob/main/main.js) |
 [CDN]()
 
 ## Documentation

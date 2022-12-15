@@ -1,5 +1,5 @@
 function newResponse(question, answer, response, displayQuestion) {
-    let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList'];
+    let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList', 'img'];
     
     if(typeof question == 'object') {
         console.warn('object is being used');
@@ -23,11 +23,11 @@ function newResponse(question, answer, response, displayQuestion) {
     } else if (typeof question != 'string' && typeof response != 'string') {
         console.error('Question/response needs to be a string or object');
     } else {
-            let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList'];
+            let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList', 'img'];
             var notResp = 0
             for (i=0; i < respTypes.length;i++) {
                 if(response == respTypes[i]) {
-                    console.log('success')
+                    console.log('success');
                     var type = i;
                     renderResult(type, answer, question, displayQuestion);
                 } else {
@@ -35,7 +35,7 @@ function newResponse(question, answer, response, displayQuestion) {
                 }
             }
             if(notResp == respTypes.length) {
-                console.error('Invalid response type')
+                console.error('Invalid response type');
             } else {
                 if (typeof answer == 'number') { //single number answer
                     console.log('single number answer');
@@ -57,6 +57,7 @@ function renderResult(type, answer, quest, display) {
     let list = document.createElement('ul');
     let link = document.createElement('a');
     let par = document.createElement('p');
+    let img = document.createElement('img');
     let container = document.getElementById('container');
     if (display == true) {
         const question = document.createElement('p');
@@ -134,6 +135,19 @@ function renderResult(type, answer, quest, display) {
         container.appendChild(list);
         for (x=0; x < hrefs.length;x++) {
             document.getElementsByClassName('list-item')[x].setAttribute('href', answer[hrefs[x]]);
+        }
+        break;
+        case 5:
+        if (typeof answer == 'object') {
+            let imgTitle = document.createElement('h3');
+            let titleContent = document.createTextNode(answer[0]);
+            imgTitle.appendChild(titleContent);
+            img.setAttribute('src', answer[1]);
+            img.setAttribute('id', answer[2]);
+            container.appendChild(img);
+            container.appendChild(imgTitle);
+        } else {
+            console.error('Image type requires an array; Format:"img-title, src, newID"');
         }
         break;
     }

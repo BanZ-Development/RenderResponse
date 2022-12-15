@@ -84,3 +84,18 @@ li > a {
     box-shadow: 0px 0px 12px 0px rgba(44,118,255,0.68);
     outline: none;
 }
+
+#custom {
+    width: 300px;
+}
+
+.info {
+    margin-top: 60px;
+    color: #ccc;
+    border: solid 1px var(--dark-border);
+    border-radius: 8px;
+}
+
+.info > h2, .info > h4 {
+    margin-inline: 10px;
+}

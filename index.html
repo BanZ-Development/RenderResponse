@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Bot</title>
-    <script src="main.js"></script>
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,10 +18,36 @@
         <button class="submit" onclick="check()">Send</button>
     </div>
     </div>
-    <script src="render-response.js"></script>
+    <script src="responserender.js"></script>
     <script>
-        newResponse('who is the 16th President?', 'Lincolin', 'list', true);
-        //newResponse('Need some links?', ['youtube', 'https://youtube.com', 'google', 'https://google.com'], 'linkList', true)
+        function check() {
+            let message = document.getElementById('input-msg').value.toLowerCase();
+            let possiblities = ['16th president', 'dolphin look', 'interesting web']
+
+            if (message.includes(possiblities[0])) {
+                newResponse('who is the 16th President?', 'Lincolin', 'list', true);
+            } else if(message.includes(possiblities[1])) {
+                newResponse('What does a dolphin look like?', ['This is a dolphin', 'assets/images/dolphin.jpg', 'custom'], 'img', true);
+            } else if(message.includes(possiblities[2])) {
+                newResponse('Need some links?', ['youtube', 'https://youtube.com', 'google', 'https://google.com'], 'linkList', true); 
+            } else {
+                newResponse('Not sure', 'be a little more specific', 'par', false);
+            }
+        }
+        //newResponse('who is the 16th President?', 'Lincolin', 'list', true);
+        //newResponse('What does a dolphin look like?', ['This is a dolphin', 'assets/images/dolphin.jpg', 'custom'], 'img', true);
+        //newResponse('Need some links?', ['youtube', 'https://youtube.com', 'google', 'https://google.com'], 'linkList', true);
     </script>
+
+    <div class="info">
+        <h2>Ask some questions</h2>
+        <h4>This is just a small demo of what you can do</h4>
+        <ul>
+        <li>Who's the 16th president of the US</li>
+        <li>What does a dolphin look like</li>
+        <li>What're some interesting websites</li>  
+        </ul>
+    </div>
+    
 </body>
 </html>

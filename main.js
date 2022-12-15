@@ -1,3 +1,5 @@
+//what your code may look like without using render response
+// super messy and inefficient
 function check() {
 let message = document.getElementById('input-msg').value.toLowerCase();
 let container = document.getElementById('container');

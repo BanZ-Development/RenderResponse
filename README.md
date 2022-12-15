@@ -1,6 +1,6 @@
 # Render Response
 
-RenderResponse is a open source vanilla javascript library that gives you tools to render things like a list, paragraph, embedded paragraph link, and link lists. 
+RenderResponse is a open source vanilla javascript library that gives you tools to render things like a list, paragraph, embedded paragraph link, and link lists. **Uses JavaScript ES6** 
 
 #### Created by Lucky
 [Lucky's GitHub](https://github.com/Raidlucky) |
@@ -70,9 +70,9 @@ You can find my shoes [here](https://youtube.com)
 ### Link
 ```js
 //syntax
-newResponse('question', ['linkTitle', 'url'], 'link', true)
+newResponse('question', ['linkTitle', 'url'], 'link', true);
 //example
-newResponse('Wheres my supersuit?', ['Supersuit', 'https://youtube.com'], 'link', true)
+newResponse('Wheres my supersuit?', ['Supersuit', 'https://youtube.com'], 'link', true);
 ```
 
 #### Result:
@@ -85,9 +85,9 @@ takes only one argument in answers
 
 ```js
 //syntax
-newResponse('question', 'response', 'par', true)
+newResponse('question', 'response', 'par', true);
 //example
-newResponse('Wheres my supersuit?', 'Probably downstairs, did you check the pantry?', 'par', true)
+newResponse('Wheres my supersuit?', 'Probably downstairs, did you check the pantry?', 'par', true);
 ```
 
 #### Result:
@@ -98,9 +98,9 @@ Probably downstairs, did you check the pantry?
 ### Link List
 ```js
 //syntax
-newResponse('question', ['linkname', 'url', 'linkname', 'url'], 'linkList', true)
+newResponse('question', ['linkname', 'url', 'linkname', 'url'], 'linkList', true);
 //example
-newResponse('I need some good websites', ['YouTube', 'https://youtube.com', 'Google', 'https://google.com'], 'linkList', true)
+newResponse('I need some good websites', ['YouTube', 'https://youtube.com', 'Google', 'https://google.com'], 'linkList', true);
 ```
 
 #### Result:
@@ -108,3 +108,18 @@ newResponse('I need some good websites', ['YouTube', 'https://youtube.com', 'Goo
 I need some good websites
 - [YouTube](https://youtube.com)
 - [Google](https://google.com)
+
+### Image
+You can use the customID to give it an id you want use to customize or us js to manipulate
+The customID **doesn't** have to be a pre-existing ID
+```js
+//syntax
+newResponse('question', ['img-title', 'src', 'customID'], 'img', display);
+//example
+newResponse('What does a dolphin look like?', ['Dolphin', 'images/dolphin.jpg', 'dolphin-img'], 'img', true);
+```
+
+#### Result:
+
+What does a dolphin look like?
+![dolphin-img](assets/images/dolphin.jpg)

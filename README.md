@@ -40,9 +40,9 @@ This can be displayed using the display argument, by typing true the question wi
 ### List
 ```js
 //using parameters
-newResponse('What does math class sound like?', ['blah', 'blah', 'blah'], 'list');
+newResponse('What does math class sound like?', ['blah', 'blah', 'blah'], 'list', true);
 //using variables
-let response = ['What does math class sound like?', ['blah', 'blah', 'blah'], 'list'];
+let response = ['What does math class sound like?', ['blah', 'blah', 'blah'], 'list', true];
 newResponse(response);
 
 ```

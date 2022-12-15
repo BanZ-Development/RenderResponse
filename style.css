@@ -99,3 +99,8 @@ li > a {
 .info > h2, .info > h4 {
     margin-inline: 10px;
 }
+
+#custom {
+    border-radius: 5px;
+    margin-left: 5px;
+}

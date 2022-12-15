@@ -123,3 +123,4 @@ newResponse('What does a dolphin look like?', ['Dolphin', 'images/dolphin.jpg', 
 
 What does a dolphin look like?
 ![dolphin-img](assets/images/dolphin.jpg)
+dolphin

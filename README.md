@@ -1,6 +1,6 @@
 # Render Response
 
-RenderResponse is a open source vanilla javascript library that gives you tools to render things like a list, paragraph, embedded paragraph link, and link lists. **Uses JavaScript ES6** 
+RenderResponse is a open source vanilla javascript library that gives you tools to render things/create elements like a list, paragraph, embedded paragraph link, and link lists. **Uses JavaScript ES6** 
 
 #### Created by Lucky
 [Lucky's GitHub](https://github.com/Raidlucky) |

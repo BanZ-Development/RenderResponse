@@ -117,6 +117,7 @@ function renderResult(type, answer, quest, display) {
         }
         break;
         case 4: //linklist
+        let currentlinks = document.querySelectorAll('.list-item').length;
         let hrefs = [];
         let item = document.getElementsByClassName('list-item');
         for (i=0; i < answer.length;i++) {
@@ -134,7 +135,7 @@ function renderResult(type, answer, quest, display) {
         }
         container.appendChild(list);
         for (x=0; x < hrefs.length;x++) {
-            document.getElementsByClassName('list-item')[x].setAttribute('href', answer[hrefs[x]]);
+            document.getElementsByClassName('list-item')[x + currentlinks].setAttribute('href', answer[hrefs[x]]);
         }
         break;
         case 5:

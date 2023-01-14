@@ -1,5 +1,5 @@
-function newResponse(question, answer, response, displayQuestion) {
-    let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList', 'img'];
+function newResponse(question, answer, response, displayQuestion, container) {
+    let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList', 'img', 'boolean'];
     
     if(typeof question == 'object') {
         console.warn('object is being used');
@@ -7,12 +7,13 @@ function newResponse(question, answer, response, displayQuestion) {
         const answ = question[1];
         const respo = question[2];
         const display = question[3];
+        const containerId = question[4];
         var notResp = 0;
         for (i=0; i < respTypes.length;i++) {
             if(question[2] == respTypes[i]) {
                 var type = i;
                 console.table({question: typeof quest, answer: typeof answ, response: respo});
-                renderResult(type, answ, quest, display);
+                renderResult(type, answ, quest, display, containerId);
             } else {
                 notResp = notResp + 1
             }
@@ -23,13 +24,13 @@ function newResponse(question, answer, response, displayQuestion) {
     } else if (typeof question != 'string' && typeof response != 'string') {
         console.error('Question/response needs to be a string or object');
     } else {
-            let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList', 'img'];
+            let respTypes = ['list', 'embedLink', 'link', 'par', 'linkList', 'img', 'boolean'];
             var notResp = 0
             for (i=0; i < respTypes.length;i++) {
                 if(response == respTypes[i]) {
                     console.log('success');
                     var type = i;
-                    renderResult(type, answer, question, displayQuestion);
+                    renderResult(type, answer, question, displayQuestion, container);
                 } else {
                     notResp = notResp + 1
                 }
@@ -52,13 +53,13 @@ function newResponse(question, answer, response, displayQuestion) {
     }
 }
 
-function renderResult(type, answer, quest, display) {
+function renderResult(type, answer, quest, display, containerId) {
     console.log('rendering');
     let list = document.createElement('ul');
     let link = document.createElement('a');
     let par = document.createElement('p');
     let img = document.createElement('img');
-    let container = document.getElementById('container');
+    let container = document.getElementById(containerId);
     if (display == true) {
         const question = document.createElement('p');
         const questContent = document.createTextNode(quest);
@@ -150,6 +151,28 @@ function renderResult(type, answer, quest, display) {
         } else {
             console.error('Image type requires an array; Format:"img-title, src, newID"');
         }
+        break;
+        case 6:
+        if (typeof answer == 'object') {
+            if (answer.length > 2) {
+                console.error('Boolean type only requires two arguments; Format:"buttonClass, buttonFunction"')
+            } else {
+                let buttonClass = answer[0];
+            let buttonFunction = answer[1];
+            for (x=0; x < 2;x++) {
+                const button = document.createElement('button');
+                button.setAttribute('class', buttonClass);
+                container.appendChild(button);
+            }
+            document.getElementsByClassName(buttonClass)[0].innerHTML = 'yes';
+            document.getElementsByClassName(buttonClass)[1].innerHTML = 'no';
+
+            document.getElementsByClassName(buttonClass)[0].setAttribute('onclick', buttonFunction.replace('!var!', 'true'));
+            document.getElementsByClassName(buttonClass)[1].setAttribute('onclick', buttonFunction.replace('!var!', 'false'));
+            }
+        } else {
+            console.error('Boolean type requires an array;');
+        }  
         break;
     }
 }

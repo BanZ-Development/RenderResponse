@@ -113,4 +113,6 @@ li > a {
     border-radius: 6px;
     cursor: pointer;
     display: inline-block;
+    margin-inline: 10px;
+    width: 60px;
 }

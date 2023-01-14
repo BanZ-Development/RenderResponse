@@ -18,20 +18,33 @@
         <button class="submit" onclick="check()">Send</button>
     </div>
     </div>
-    <script src="response.min.js"></script>
+    <script src="render-response.js"></script>
     <script>
         function check() {
             let message = document.getElementById('input-msg').value.toLowerCase();
-            let possiblities = ['16th president', 'dolphin look', 'interesting web']
+            let possiblities = ['name 5', 'dolphin look', 'interesting web', 'feeling blue', 'hello'];
 
             if (message.includes(possiblities[0])) {
-                newResponse('who is the 16th President?', 'Lincolin', 'list', true);
+                newResponse('Name 5 presidents?', ['Washington', 'Lincoln', 'Obama', 'Trump', 'Biden'], 'list', true, 'container');
             } else if(message.includes(possiblities[1])) {
-                newResponse('What does a dolphin look like?', ['This is a dolphin', 'assets/images/dolphin.jpg', 'custom'], 'img', true);
+                newResponse('What does a dolphin look like?', ['This is a dolphin', 'assets/images/dolphin.jpg', 'custom'], 'img', true, 'container');
             } else if(message.includes(possiblities[2])) {
-                newResponse('Need some links?', ['youtube', 'https://youtube.com', 'google', 'https://google.com', 'github', 'https://github.com'], 'linkList', true); 
+                newResponse('Need some links?', ['youtube', 'https://youtube.com', 'google', 'https://google.com', 'github', 'https://github.com'], 'linkList', true, 'container'); 
+            } else if(message.includes(possiblities[3])) {
+                newResponse("I'm not sure, are you?", ['boolean-btn', 'burger(!var!)'], 'boolean', true, 'container');
+            } else if(message.includes(possiblities[4])) {
+                newResponse('Hello!', 'Hello there!', 'par', false, 'container');
+            }
+            else {
+                newResponse('Not sure', 'be a little more specific', 'par', false, 'container');
+            }
+        }
+
+        function burger(answer) {
+            if (answer == true) {
+                newResponse('Are you feeling blue?', "I'm sorry, hope you feel better", 'par', false, 'container');
             } else {
-                newResponse('Not sure', 'be a little more specific', 'par', false);
+                newResponse('Are you feeling blue?', "That's good", 'par', false, 'container');
             }
         }
         </script>
@@ -40,9 +53,11 @@
         <h2>Ask some questions</h2>
         <h4>This is just a small demo of what you can do</h4>
         <ul>
-        <li>Who's the 16th president of the US</li>
+        <li>Hello</li>
+        <li>Name 5 presidents</li>
         <li>What does a dolphin look like</li>
-        <li>What're some interesting websites</li>  
+        <li>What're some interesting websites</li>
+        <li>Am I feeling blue?</li>  
         </ul>
     </div>
     
